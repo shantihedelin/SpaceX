@@ -3,6 +3,9 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchRockets } from "./redux/rocketsSlice";
 import RocketSlideShow from "./components/RocketSlideShow";
+import Navbar from "./components/Navbar";
+
+//TODO: make dynamic sites. 
 
 function App() {
   const dispatch = useDispatch();
@@ -19,7 +22,7 @@ function App() {
   return (
     <>
       <div className="">
-        <h1>SpaceX</h1>
+<Navbar/>
 
         <ul className="">
           <div className="flex justify-center flex-col">
