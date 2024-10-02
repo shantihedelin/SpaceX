@@ -1,4 +1,4 @@
-@tailwind base;
+
 @tailwind components;
 @tailwind utilities;
 
@@ -49,3 +49,44 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
+.slideshow-container {
+  position: relative;
+  max-width: 100%; /* Anpassa för responsivt beteende */
+}
+
+.slideshow-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.left-arrow, .right-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent bakgrund */
+  color: white;
+  font-size: 24px;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  z-index: 1; /* Lägg till denna rad för att se till att pilarna ligger ovanpå bilden */
+}
+
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+/* 
+Visa pilarna när man hovrar över bilden */
+.slideshow-container:hover .left-arrow,
+.slideshow-container:hover .right-arrow {
+  opacity: 1;
+}
+
