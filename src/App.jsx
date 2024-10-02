@@ -18,7 +18,9 @@ function App() {
 
   return (
     <>
-      <div>
+      <div className="">
+        <h1>SpaceX</h1>
+
         <ul className="">
           <div className="flex justify-center flex-col">
             {rockets
@@ -27,17 +29,16 @@ function App() {
                 (a, b) => new Date(b.first_flight) - new Date(a.first_flight)
               )
               .map((rocket) => (
-                <li key={rocket.id} className="bg-green-500 my-8">
+                <li key={rocket.id} className="bg-green-600 my-8">
+                  <RocketSlideShow images={rocket.flickr_images} />
                   <p>
                     {rocket.name} <br />
                     Date: {rocket.first_flight} <br />
                     Cost: ${rocket.cost_per_launch} <br />
-                    Height of rocket in meter: {rocket.height.meters} m <br />
+                    Height of rocket {rocket.height.meters} m <br />
                     Success rate: {rocket.success_rate_pct}% <br />
                     Description: {rocket.description} <br />
                   </p>
-
-                  <RocketSlideShow images={rocket.flickr_images} />
                 </li>
               ))}
           </div>
