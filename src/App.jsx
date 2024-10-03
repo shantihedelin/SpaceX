@@ -4,8 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchRockets } from "./redux/rocketsSlice";
 import RocketSlideShow from "./components/RocketSlideShow";
 import Navbar from "./components/Navbar";
+import { Link } from "react-router-dom";
 
-//TODO: make dynamic sites. 
+//TODO: make dynamic sites.
 
 function App() {
   const dispatch = useDispatch();
@@ -22,7 +23,7 @@ function App() {
   return (
     <>
       <div className="">
-<Navbar/>
+        <Navbar />
 
         <ul className="">
           <div className="flex justify-center flex-col">
@@ -35,7 +36,9 @@ function App() {
                 <li key={rocket.id} className="bg-green-600 my-8">
                   <RocketSlideShow images={rocket.flickr_images} />
                   <p>
-                    {rocket.name} <br />
+                    <Link to={`/rockets/${rocket.id}`}>
+                      {rocket.name} <br />
+                    </Link>
                     Date: {rocket.first_flight} <br />
                     Cost: ${rocket.cost_per_launch} <br />
                     Height of rocket {rocket.height.meters} m <br />

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
-  // implement og and metadata here
+
   return (
     <div className="bg-transparent p-4 px-12">
       <ul className="flex justify-between items-center">
